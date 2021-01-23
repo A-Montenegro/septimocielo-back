@@ -11,7 +11,7 @@ import java.util.Date;
 public class Videojuego {
 
     @Id
-    private int id;
+    private Long id;
 
     @Column(name="nombre")
     private String nombre;
@@ -25,11 +25,11 @@ public class Videojuego {
     @Column(name="fecha_salida")
     private Date fechaSalida;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

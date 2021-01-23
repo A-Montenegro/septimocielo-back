@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="129016f4-00cb-483f-8c36-ff3cb671f04d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-development.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-development.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-production.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-production.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-development.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-development.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/septimocielo/dao/VideojuegoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xyz/septimocielo/dao/VideojuegoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/septimocielo/model/Videojuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xyz/septimocielo/model/Videojuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/septimocielo/rest/VideojuegoRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xyz/septimocielo/rest/VideojuegoRest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
