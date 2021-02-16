@@ -1,6 +1,5 @@
 package xyz.septimocielo.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,7 +14,6 @@ public class Videojuego {
 
     private String nombre;
     private String descripcion;
-    private Long plataformaId;
     private Date fechaSalida;
 
     public Long getId() { return id; }
@@ -34,14 +32,6 @@ public class Videojuego {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public Long getPlataformaId() {
-        return plataformaId;
-    }
-
-    public void setPlataformaId(Long plataformaId) {
-        this.plataformaId = plataformaId;
     }
 
     public Date getFechaSalida() {
