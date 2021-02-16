@@ -17,7 +17,13 @@ public class Manga {
     private Long plataformaId;
     private Date fechaSalida;
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;
