@@ -44,7 +44,7 @@ pipeline {
         stage('Artifact processing') {
             steps {
                 sh "sudo fuser -k " + PORT + "/tcp || true"
-                sh SCRIPT_DEPLOY_SEPTIMOCIELO_BACK ARTIFACT_NAME PROFILE
+                sh SCRIPT_DEPLOY_SEPTIMOCIELO_BACK + " " + ARTIFACT_NAME " " + PROFILE
             }
 
         }
