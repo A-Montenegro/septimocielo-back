@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PORT = 8099
+        PORT = 8098
         SCRIPT_BUILD_SEPTIMOCIELO_BACK = "/home/pi/deploy/scripts/build-septimocielo-back.sh"
         SCRIPT_DEPLOY_SEPTIMOCIELO_BACK = "/home/pi/deploy/scripts/deploy-septimocielo-back.sh"
     }
