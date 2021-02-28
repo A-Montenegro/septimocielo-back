@@ -18,7 +18,7 @@ pipeline {
 
                 // Run Maven on a Unix agent.
                 //sh "mvn -Dspring.profiles.active=testing -Djasypt.encryptor.password=514131 clean package compile"
-                sh "." + SCRIPT_DEPLOY_SEPTIMOCIELO_BACK_TESTING
+                sh SCRIPT_DEPLOY_SEPTIMOCIELO_BACK_TESTING
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
