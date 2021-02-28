@@ -2,7 +2,9 @@ pipeline {
     agent any
 
     environment {
-        SCRIPT_DEPLOY_SEPTIMOCIELO_BACK_TESTING="/home/pi/deploy/scripts/deploy-septimocielo-back.sh"
+        PORT = 8099
+        SCRIPT_BUILD_SEPTIMOCIELO_BACK = "/home/pi/deploy/scripts/build-septimocielo-back.sh"
+        SCRIPT_DEPLOY_SEPTIMOCIELO_BACK = "/home/pi/deploy/scripts/deploy-septimocielo-back.sh"
     }
 
     tools {
@@ -17,8 +19,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/A-Montenegro/septimocielo-back.git'
 
                 // Run Maven on a Unix agent.
-                //sh "mvn -Dspring.profiles.active=testing -Djasypt.encryptor.password=514131 clean package compile"
-                sh SCRIPT_DEPLOY_SEPTIMOCIELO_BACK_TESTING
+                sh SCRIPT_BUILD_SEPTIMOCIELO_BACK_TESTING
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
@@ -35,8 +36,9 @@ pipeline {
         }
         stage('Artifact processing') {
             steps {
-                sh "sudo fuser -k 8099/tcp || true"
-                sh "sudo java -jar /var/lib/jenkins/workspace/septimocielo-back-main/target/septimocielo-0.0.1-SNAPSHOT.jar --spring.profiles.active=production --jasypt.encryptor.password=514131 &"
+                sh "sudo fuser -k " + PORT + "/tcp || true"
+                sh SCRIPT_DEPLOY_SEPTIMOCIELO_BACK_TESTING
+                //sh "sudo java -jar /var/lib/jenkins/workspace/septimocielo-back-main/target/septimocielo-0.0.1-SNAPSHOT.jar --spring.profiles.active=testing --jasypt.encryptor.password=514131 &"
 
             }
 
