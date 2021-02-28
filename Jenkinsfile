@@ -5,6 +5,13 @@ pipeline {
         PORT = 8098
         SCRIPT_BUILD_SEPTIMOCIELO_BACK = "/home/pi/deploy/scripts/build-septimocielo-back.sh"
         SCRIPT_DEPLOY_SEPTIMOCIELO_BACK = "/home/pi/deploy/scripts/deploy-septimocielo-back.sh"
+        ARTIFACT_NAME = "septimocielo-back"
+
+        if (env.GIT_BRANCH == 'origin/main'){
+            PROFILE = "production"
+        } else {
+            PROFILE = "testing"
+        }
     }
 
     tools {
@@ -37,9 +44,7 @@ pipeline {
         stage('Artifact processing') {
             steps {
                 sh "sudo fuser -k " + PORT + "/tcp || true"
-                sh SCRIPT_DEPLOY_SEPTIMOCIELO_BACK
-                //sh "sudo java -jar /var/lib/jenkins/workspace/septimocielo-back-main/target/septimocielo-0.0.1-SNAPSHOT.jar --spring.profiles.active=testing --jasypt.encryptor.password=514131 &"
-
+                sh SCRIPT_DEPLOY_SEPTIMOCIELO_BACK ARTIFACT_NAME PROFILE
             }
 
         }
