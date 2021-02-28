@@ -6,6 +6,7 @@ pipeline {
         SCRIPT_BUILD_SEPTIMOCIELO_BACK = "/home/pi/deploy/scripts/build-septimocielo-back.sh"
         SCRIPT_DEPLOY_SEPTIMOCIELO_BACK = "/home/pi/deploy/scripts/deploy-septimocielo-back.sh"
         ARTIFACT_NAME = "septimocielo-back"
+        FILE_EXTENSION = ".jar"
 
     }
 
@@ -45,7 +46,7 @@ pipeline {
                         PROFILE = "testing"
                     }
                     sh "sudo fuser -k " + PORT + "/tcp || true"
-                    sh SCRIPT_DEPLOY_SEPTIMOCIELO_BACK + " " + ARTIFACT_NAME " " + PROFILE
+                    sh SCRIPT_DEPLOY_SEPTIMOCIELO_BACK + " " + ARTIFACT_NAME + FILE_EXTENSION + " " + PROFILE
                 }
             }
         }
