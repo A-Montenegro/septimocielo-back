@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        SCRIPT_DEPLOY_SEPTIMOCIELO_BACK_TESTING="/home/pi/deploy/scripts/deploy-septimocielo-back.sh"
+    }
+
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "mvn"
@@ -13,7 +17,8 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/A-Montenegro/septimocielo-back.git'
 
                 // Run Maven on a Unix agent.
-                sh "mvn -Dspring.profiles.active=testing -Djasypt.encryptor.password=514131 clean package compile"
+                //sh "mvn -Dspring.profiles.active=testing -Djasypt.encryptor.password=514131 clean package compile"
+                sh "." + SCRIPT_DEPLOY_SEPTIMOCIELO_BACK_TESTING
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
