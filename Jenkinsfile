@@ -19,7 +19,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/A-Montenegro/septimocielo-back.git'
 
                 // Run Maven on a Unix agent.
-                sh SCRIPT_BUILD_SEPTIMOCIELO_BACK_TESTING
+                sh SCRIPT_BUILD_SEPTIMOCIELO_BACK
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
@@ -37,7 +37,7 @@ pipeline {
         stage('Artifact processing') {
             steps {
                 sh "sudo fuser -k " + PORT + "/tcp || true"
-                sh SCRIPT_DEPLOY_SEPTIMOCIELO_BACK_TESTING
+                sh SCRIPT_DEPLOY_SEPTIMOCIELO_BACK
                 //sh "sudo java -jar /var/lib/jenkins/workspace/septimocielo-back-main/target/septimocielo-0.0.1-SNAPSHOT.jar --spring.profiles.active=testing --jasypt.encryptor.password=514131 &"
 
             }
