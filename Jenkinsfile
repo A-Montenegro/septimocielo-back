@@ -38,15 +38,16 @@ pipeline {
         }
         stage('Artifact processing') {
             steps {
-                if (env.GIT_BRANCH == 'origin/main'){
-                    PROFILE = "production"
-                } else {
-                    PROFILE = "testing"
+                script{
+                    if (env.GIT_BRANCH == 'origin/main'){
+                        PROFILE = "production"
+                    } else {
+                        PROFILE = "testing"
+                    }
+                    sh "sudo fuser -k " + PORT + "/tcp || true"
+                    sh SCRIPT_DEPLOY_SEPTIMOCIELO_BACK + " " + ARTIFACT_NAME " " + PROFILE
                 }
-                sh "sudo fuser -k " + PORT + "/tcp || true"
-                sh SCRIPT_DEPLOY_SEPTIMOCIELO_BACK + " " + ARTIFACT_NAME " " + PROFILE
             }
-
         }
     }
 }
