@@ -18,20 +18,20 @@ import java.util.List;
 public class UsuarioService implements UserDetailsService {
 
     @Autowired
-    private UsuarioDAO UsuarioDAO;
+    private UsuarioDAO usuarioDAO;
 
     public Usuario getOne(Long id){
-        return UsuarioDAO.findById(id).get();
+        return usuarioDAO.findById(id).get();
     }
 
     public List<Usuario> findAll(){
 
-        return UsuarioDAO.findAll();
+        return usuarioDAO.findAll();
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-       Usuario usuario = UsuarioDAO.findByUsername(username);
+       Usuario usuario = usuarioDAO.findByUsername(username);
 
        List<GrantedAuthority> roles = new ArrayList<>();
        roles.add(new SimpleGrantedAuthority("ADMIN"));

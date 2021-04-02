@@ -6,7 +6,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "plataformas_videojuegos")
+@Table(name = "plataforma_videojuego")
 public class PlataformaVideojuegos {
 
     @Id

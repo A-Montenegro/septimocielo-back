@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="directores_cine")
+@Table(name="director_cine")
 public class DirectorCine {
     @Id
     private Long id;

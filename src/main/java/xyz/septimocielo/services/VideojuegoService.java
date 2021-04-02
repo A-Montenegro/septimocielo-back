@@ -2,8 +2,8 @@ package xyz.septimocielo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import xyz.septimocielo.dao.VideojuegoDAO;
-import xyz.septimocielo.model.Videojuego;
+import xyz.septimocielo.model.videojuego.VideojuegoRepository;
+import xyz.septimocielo.model.videojuego.Videojuego;
 
 import java.util.List;
 
@@ -11,14 +11,14 @@ import java.util.List;
 public class VideojuegoService {
 
     @Autowired
-    private VideojuegoDAO videojuegoDAO;
+    private VideojuegoRepository videojuegoRepository;
 
     public Videojuego getOne(Long id){
-        return videojuegoDAO.findById(id).get();
+        return videojuegoRepository.findById(id).get();
     }
 
     public List<Videojuego> findAll(){
 
-        return videojuegoDAO.findAll();
+        return videojuegoRepository.findAll();
     }
 }

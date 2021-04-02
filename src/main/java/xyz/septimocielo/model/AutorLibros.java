@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="autores_libros")
+@Table(name="autor_libro")
 public class AutorLibros {
     @Id
     private Long id;

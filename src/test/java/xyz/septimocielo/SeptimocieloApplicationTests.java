@@ -5,9 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import xyz.septimocielo.dao.UsuarioDAO;
-import xyz.septimocielo.model.Usuario;
-import xyz.septimocielo.model.Videojuego;
-import xyz.septimocielo.services.UsuarioService;
+import xyz.septimocielo.model.videojuego.Videojuego;
 import xyz.septimocielo.services.VideojuegoService;
 
 import static org.junit.Assert.assertTrue;
