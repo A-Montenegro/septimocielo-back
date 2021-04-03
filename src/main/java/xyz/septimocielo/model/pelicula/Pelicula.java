@@ -1,21 +1,20 @@
-package xyz.septimocielo.model;
+package xyz.septimocielo.model.pelicula;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Table(name = "libro")
-public class Libro {
+@Table(name = "pelicula")
+public class Pelicula {
 
     @Id
     private Long id;
 
     private String nombre;
     private String descripcion;
-    private BigDecimal numeroPaginas;
+    private Long plataformaId;
     private Date fechaSalida;
 
     public Long getId() {
@@ -42,12 +41,12 @@ public class Libro {
         this.descripcion = descripcion;
     }
 
-    public BigDecimal getNumeroPaginas() {
-        return numeroPaginas;
+    public Long getPlataformaId() {
+        return plataformaId;
     }
 
-    public void setNumeroPaginas(BigDecimal numeroPaginas) {
-        this.numeroPaginas = numeroPaginas;
+    public void setPlataformaId(Long plataformaId) {
+        this.plataformaId = plataformaId;
     }
 
     public Date getFechaSalida() {
@@ -57,5 +56,4 @@ public class Libro {
     public void setFechaSalida(Date fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
-
 }

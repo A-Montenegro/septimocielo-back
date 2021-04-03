@@ -2,8 +2,8 @@ package xyz.septimocielo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import xyz.septimocielo.dao.LibroDAO;
-import xyz.septimocielo.model.Libro;
+import xyz.septimocielo.model.libro.LibroRepository;
+import xyz.septimocielo.model.libro.Libro;
 
 import java.util.List;
 
@@ -11,14 +11,14 @@ import java.util.List;
 public class LibroService {
 
     @Autowired
-    private LibroDAO LibroDAO;
+    private LibroRepository libroRepository;
 
     public Libro getOne(Long id){
-        return LibroDAO.findById(id).get();
+        return libroRepository.findById(id).get();
     }
 
     public List<Libro> findAll(){
 
-        return LibroDAO.findAll();
+        return libroRepository.findAll();
     }
 }

@@ -1,12 +1,12 @@
-package xyz.septimocielo.model;
+package xyz.septimocielo.model.directorCine;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="autor_anime")
-public class AutorAnime {
+@Table(name="director_cine")
+public class DirectorCine {
     @Id
     private Long id;
 

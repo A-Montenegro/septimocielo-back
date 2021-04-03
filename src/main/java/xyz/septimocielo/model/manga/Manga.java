@@ -1,4 +1,4 @@
-package xyz.septimocielo.model;
+package xyz.septimocielo.model.manga;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -6,8 +6,8 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "pelicula")
-public class Pelicula {
+@Table(name = "manga")
+public class Manga {
 
     @Id
     private Long id;

@@ -1,12 +1,12 @@
-package xyz.septimocielo.model;
+package xyz.septimocielo.model.autorManga;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="autor_libro")
-public class AutorLibros {
+@Table(name="autor_manga")
+public class AutorManga {
     @Id
     private Long id;
 

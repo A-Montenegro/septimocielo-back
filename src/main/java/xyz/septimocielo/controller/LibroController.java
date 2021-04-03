@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import xyz.septimocielo.model.Libro;
+import xyz.septimocielo.model.libro.Libro;
 import xyz.septimocielo.services.LibroService;
 
 import java.util.List;

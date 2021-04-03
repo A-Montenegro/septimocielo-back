@@ -1,4 +1,4 @@
-package xyz.septimocielo.model;
+package xyz.septimocielo.model.usuario;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

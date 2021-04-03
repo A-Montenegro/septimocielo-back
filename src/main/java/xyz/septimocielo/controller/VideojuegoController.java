@@ -18,7 +18,7 @@ public class VideojuegoController {
     @Autowired
     private VideojuegoService videojuegoService;
 
-    @GetMapping("/videojuegos")
+    @GetMapping("/all")
     public List<Videojuego> findAll(){
         return videojuegoService.findAll();
     }

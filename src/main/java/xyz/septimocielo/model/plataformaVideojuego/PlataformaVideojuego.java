@@ -1,4 +1,4 @@
-package xyz.septimocielo.model;
+package xyz.septimocielo.model.plataformaVideojuego;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "plataforma_videojuego")
-public class PlataformaVideojuegos {
+public class PlataformaVideojuego {
 
     @Id
     private Long id;

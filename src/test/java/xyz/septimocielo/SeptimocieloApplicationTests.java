@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import xyz.septimocielo.dao.UsuarioDAO;
+import xyz.septimocielo.model.usuario.UsuarioRepository;
 import xyz.septimocielo.model.videojuego.Videojuego;
 import xyz.septimocielo.services.VideojuegoService;
 
@@ -17,7 +17,7 @@ class SeptimocieloApplicationTests {
 	VideojuegoService videojuegoService;
 
 	@Autowired
-	UsuarioDAO usuarioDAO;
+    UsuarioRepository usuarioRepository;
 
 	@Autowired
 	BCryptPasswordEncoder encoder;
