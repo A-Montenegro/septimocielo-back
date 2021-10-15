@@ -1,4 +1,4 @@
-package xyz.septimocielo;
+package xyz.septimocielo.unit;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 
 @SpringBootTest
 @Transactional
-class SeptimocieloApplicationTests {
+class SeptimocieloApplicationUnitTests {
 
 	@Autowired
 	VideojuegoServiceImpl videojuegoServiceImpl;
@@ -34,14 +34,14 @@ class SeptimocieloApplicationTests {
 	public void createUserTest(){
 		Usuario usuario = new Usuario();
 		usuario.setId(-1L);
-		usuario.setUsername("bertocrk");
-		usuario.setPassword(encoder.encode("yuxrayg2"));
-		usuario.setNombre("Alberto Martínez Montenegro");
-		usuario.setApellido1("Martínez");
-		usuario.setApellido2("Montenegro");
-		usuario.setEmail("alberto.crk@gmail.com");
+		usuario.setUsername("test");
+		usuario.setPassword(encoder.encode("test"));
+		usuario.setNombre("Test");
+		usuario.setApellido1("test");
+		usuario.setApellido2("test");
+		usuario.setEmail("test@test.com");
 		usuario = usuarioRepository.save(usuario);
-		assertTrue(usuario.getUsername().equals("bertocrk"));
+		assertTrue(usuario.getUsername().equals("test"));
 
 	}
 
