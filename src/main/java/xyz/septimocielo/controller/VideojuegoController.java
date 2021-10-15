@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import xyz.septimocielo.model.videojuego.Videojuego;
-import xyz.septimocielo.services.VideojuegoService;
+import xyz.septimocielo.services.videojuego.VideojuegoService;
 
 import java.util.List;
 

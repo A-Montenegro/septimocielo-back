@@ -1,4 +1,4 @@
-package xyz.septimocielo.services;
+package xyz.septimocielo.services.usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UsuarioService implements UserDetailsService {
+public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;

@@ -1,4 +1,4 @@
-package xyz.septimocielo.services;
+package xyz.septimocielo.services.videojuego;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,7 +8,7 @@ import xyz.septimocielo.model.videojuego.Videojuego;
 import java.util.List;
 
 @Service
-public class VideojuegoService {
+public class VideojuegoServiceImpl implements VideojuegoService{
 
     @Autowired
     private VideojuegoRepository videojuegoRepository;
@@ -18,7 +18,6 @@ public class VideojuegoService {
     }
 
     public List<Videojuego> findAll(){
-
         return videojuegoRepository.findAll();
     }
 }

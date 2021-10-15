@@ -4,17 +4,20 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import xyz.septimocielo.model.usuario.Usuario;
 import xyz.septimocielo.model.usuario.UsuarioRepository;
-import xyz.septimocielo.model.videojuego.Videojuego;
-import xyz.septimocielo.services.VideojuegoService;
+import xyz.septimocielo.services.videojuego.VideojuegoServiceImpl;
+
+import javax.transaction.Transactional;
 
 import static org.junit.Assert.assertTrue;
 
 @SpringBootTest
+@Transactional
 class SeptimocieloApplicationTests {
 
 	@Autowired
-	VideojuegoService videojuegoService;
+	VideojuegoServiceImpl videojuegoServiceImpl;
 
 	@Autowired
     UsuarioRepository usuarioRepository;
@@ -23,20 +26,22 @@ class SeptimocieloApplicationTests {
 	BCryptPasswordEncoder encoder;
 
 	@Test
-	void contextLoads() {
-		Videojuego videojuego = this.videojuegoService.getOne(1L);
-		assertTrue(videojuego.getNombre().equals("Baten Kaitos"));
+	void testFirstItemName() {
+		assertTrue(this.videojuegoServiceImpl.getOne(1L).getNombre().equals("Baten Kaitos"));
 	}
 
 	@Test
-	public void crearUsuarioTest(){
-//		Usuario usuario = new Usuario();
-//		usuario.setId(-1L);
-//		usuario.setUsername("bertocrk");
-//		usuario.setPassword(encoder.encode("yuxrayg2"));
-//		Usuario retorno = usuarioDAO.save(usuario);
-
-		assertTrue(1==1);
+	public void createUserTest(){
+		Usuario usuario = new Usuario();
+		usuario.setId(-1L);
+		usuario.setUsername("bertocrk");
+		usuario.setPassword(encoder.encode("yuxrayg2"));
+		usuario.setNombre("Alberto Martínez Montenegro");
+		usuario.setApellido1("Martínez");
+		usuario.setApellido2("Montenegro");
+		usuario.setEmail("alberto.crk@gmail.com");
+		usuario = usuarioRepository.save(usuario);
+		assertTrue(usuario.getUsername().equals("bertocrk"));
 
 	}
 

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import xyz.septimocielo.model.libro.Libro;
-import xyz.septimocielo.services.LibroService;
+import xyz.septimocielo.services.libro.LibroServiceImpl;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
 public class LibroController {
 
     @Autowired
-    private LibroService LibroService;
+    private LibroServiceImpl LibroService;
 
     @GetMapping("/libros")
     public List<Libro> findAll(){

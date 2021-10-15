@@ -1,4 +1,4 @@
-package xyz.septimocielo.services;
+package xyz.septimocielo.services.libro;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,7 +8,7 @@ import xyz.septimocielo.model.libro.Libro;
 import java.util.List;
 
 @Service
-public class LibroService {
+public class LibroServiceImpl implements LibroService{
 
     @Autowired
     private LibroRepository libroRepository;
