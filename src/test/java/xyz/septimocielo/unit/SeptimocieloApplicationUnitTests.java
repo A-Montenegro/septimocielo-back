@@ -35,7 +35,7 @@ class SeptimocieloApplicationUnitTests {
 		Usuario usuario = new Usuario();
 		usuario.setId(-1L);
 		usuario.setUsername("test");
-		usuario.setPassword(encoder.encode("test"));
+		usuario.setPassword(encoder.encode("yuxrayg2"));
 		usuario.setNombre("Test");
 		usuario.setApellido1("test");
 		usuario.setApellido2("test");
